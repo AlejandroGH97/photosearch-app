@@ -1,5 +1,6 @@
-import PhotoCard from '../PhotoCard';
 import { useEffect, useState } from 'react';
+
+import PhotoCard from '../PhotoCard';
 
 function TrendingGallery() {
   const [photos, setPhotos] = useState([]);

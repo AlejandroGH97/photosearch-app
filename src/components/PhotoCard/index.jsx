@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import './PhotoCard.css';
 import { useNavigate } from 'react-router-dom';
+
+import './PhotoCard.css';
 
 function PhotoCard({ photo, onTagClick }) {
   const navigate = useNavigate();
