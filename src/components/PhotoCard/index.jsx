@@ -1,7 +1,15 @@
 import PropTypes from 'prop-types';
 import './PhotoCard.css';
+import { useNavigate } from 'react-router-dom';
 
-function PhotoCard({ photo }) {
+function PhotoCard({ photo, onTagClick }) {
+  const navigate = useNavigate();
+
+  const handleTagClick = (tag) => {
+    onTagClick(tag);
+    navigate(`/tag/${tag}`);
+  };
+
   return (
     <div className="photo-card">
       <div className="photo-image-container">
@@ -15,7 +23,12 @@ function PhotoCard({ photo }) {
           </div>
           <div className="photo-tags">
             {photo.tags?.slice(0, 3).map((tag) => (
-              <div className="tag" title={tag} key={tag}>
+              <div
+                onClick={() => handleTagClick(tag)}
+                className="tag"
+                title={tag}
+                key={tag}
+              >
                 {tag}
               </div>
             ))}
@@ -34,6 +47,7 @@ PhotoCard.propTypes = {
     date: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
+  onTagClick: PropTypes.func,
 };
 
 export default PhotoCard;

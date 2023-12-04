@@ -44,7 +44,7 @@ function SearchGallery({ setTagInput }) {
     <>
       <h2>Results</h2>
       {photos.map((photo) => (
-        <PhotoCard key={photo.id} photo={photo} />
+        <PhotoCard key={photo.id} photo={photo} onTagClick={setTagInput} />
       ))}
     </>
   );
