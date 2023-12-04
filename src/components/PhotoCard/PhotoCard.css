@@ -1,0 +1,59 @@
+.photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .photo-image-container {
+    position: relative;
+  }
+  
+  .photo-image-container img {
+    width: 550px;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  .photo-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-between;
+  }
+  
+  .photo-info-overlay p {
+    margin-top: 5px;
+  }
+  
+  .photo-data {
+    text-align: left;
+  }
+  
+  .photo-data > * {
+    margin: 5px 0;
+  }
+  
+  .photo-tags {
+    margin-top: 10px;
+  }
+  
+  .tag {
+    border-color: #f9f9f9;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    padding: 0.4em 0.4em;
+    margin-right: 0.3rem;
+    display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+  }
