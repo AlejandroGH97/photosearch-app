@@ -30,6 +30,9 @@ function TrendingGallery() {
           };
         });
         setPhotos(photoData);
+      })
+      .catch((error) => {
+        console.error(error);
       });
   }, []);
 

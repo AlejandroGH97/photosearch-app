@@ -5,16 +5,18 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import SearchGallery from './components/SearchGallery';
 import TrendingGallery from './components/TrendingGallery';
+import Header from './components/Header';
 
 function App() {
   const [tagInput, setTagInput] = useState('');
 
   return (
     <Router>
-      <div>
+      <Header />
+      <div className='gallery-container'>
         <SearchBar tagInput={tagInput} setTagInput={setTagInput} />
         <main>
-          <section id="photo-gallery">
+          <section className="photo-gallery">
             <Routes>
               <Route path="/" exact element={<TrendingGallery />} />
               <Route
