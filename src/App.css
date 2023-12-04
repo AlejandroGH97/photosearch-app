@@ -4,3 +4,11 @@
   padding: 2rem;
   text-align: center;
 }
+
+#photo-gallery {
+  text-align: left;
+  display: grid;
+  columns: 1;
+  gap: 1rem;
+  padding: 1rem;
+}

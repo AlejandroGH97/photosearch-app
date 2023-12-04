@@ -1,16 +1,18 @@
-import PhotoCard from '../PhotoCard/PhotoCard'
+import PhotoCard from '../PhotoCard';
 import { useEffect, useState } from 'react';
-import './TrendingGallery.css';
 
 function TrendingGallery() {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.unsplash.com/photos/random?count=10&orientation=squarish', {
-      headers: {
-        Authorization: `Client-ID ${import.meta.env.VITE_UNSPLASH_API_TOKEN}`,
-      },
-    })
+    fetch(
+      'https://api.unsplash.com/photos/random?count=10&orientation=squarish',
+      {
+        headers: {
+          Authorization: `Client-ID ${import.meta.env.VITE_UNSPLASH_API_TOKEN}`,
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         const photoData = data.map((photo) => {
@@ -32,12 +34,12 @@ function TrendingGallery() {
   }, []);
 
   return (
-    <section id="photo-gallery">
+    <>
       <h2>Trending photos right now</h2>
       {photos.map((photo) => (
         <PhotoCard key={photo.id} photo={photo} />
       ))}
-    </section>
+    </>
   );
 }
 
